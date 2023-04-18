@@ -44,7 +44,10 @@ export default series(
   withTaskName('createOutput', () => mkdir(dtOutput, { recursive: true })),
   // 并行执行
   parallel(
+    // 打包es lib
     runTask('buildModules'),
+    // 
+    runTask('buildFullBundle')
   )
 ) as Undertaker.TaskFunction
 

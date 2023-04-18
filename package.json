@@ -7,7 +7,9 @@
   "scripts": {
     "clean": "pnpm run clean-dist && pnpm run -r --parallel clean",
     "clean-dist": "rimraf dist",
-    "build": "pnpm run -C internal/build start"
+    "build": "pnpm run -C internal/build start",
+    "stub": "pnpm run -r --parallel stub",
+    "postinstall": "pnpm stub"
   },
   "keywords": [],
   "author": "",
