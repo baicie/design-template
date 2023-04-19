@@ -46,8 +46,10 @@ export default series(
   parallel(
     // 打包es lib
     runTask('buildModules'),
-    // 
-    runTask('buildFullBundle')
+    // 打包两种js 与mjs 全在一个文件中
+    runTask('buildFullBundle'),
+    // 打包types
+    runTask('generateTypesDefinitions')
   )
 ) as Undertaker.TaskFunction
 

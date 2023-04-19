@@ -1,6 +1,7 @@
 import { dtPackage, getPackageDevpebdencies } from '@design-template/build-utils';
 import { OutputOptions, RollupBuild } from 'rollup';
 
+// 为false时依赖更多
 export async function generateExternal(options: { full: boolean }) {
   // 获取依赖
   const { dependencies, peerDependencies } = getPackageDevpebdencies(dtPackage)
@@ -25,4 +26,12 @@ export function writeBundles(
   options: OutputOptions[]
 ) {
   return Promise.all(options.map(option => bundle.write(option)))
+}
+
+export function formatBundleFilename(
+  name: string,
+  minify: boolean,
+  ext: string
+) {
+  return `${name}${minify ? 'min' : ''}.${ext}`
 }

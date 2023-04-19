@@ -6,3 +6,5 @@ pnpm run -r --parallel stub
 design-template
 DesignTemplate
 dt***
+DesignTemplate
+Design Template

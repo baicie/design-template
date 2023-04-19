@@ -1,6 +1,6 @@
 import { resolve } from 'node:path';
 
-// 根目录 
+// 各种根目录 
 export const projRoot = resolve(__dirname, '..', '..', '..')
 // 包目录
 export const pkgRoot = resolve(projRoot, 'packages')
@@ -8,6 +8,9 @@ export const pkgRoot = resolve(projRoot, 'packages')
 export const buildRoot = resolve(projRoot, 'internal', 'build')
 // 主项目目录
 export const dtRoot = resolve(pkgRoot, 'design-template')
+// 国际化根目录
+export const localeRoot = resolve(pkgRoot, 'locale')
+
 
 /** `/dist` */
 export const buildOutput = resolve(projRoot, 'dist')

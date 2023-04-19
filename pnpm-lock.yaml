@@ -3,6 +3,10 @@ lockfileVersion: '6.0'
 importers:
 
   .:
+    dependencies:
+      '@types/lodash':
+        specifier: ^4.14.194
+        version: 4.14.194
     devDependencies:
       '@design-template/build-constants':
         specifier: workspace:^
@@ -49,18 +53,27 @@ importers:
       chalk:
         specifier: ^5.2.0
         version: 5.2.0
+      consola:
+        specifier: ^3.1.0
+        version: 3.1.0
       fast-glob:
         specifier: ^3.2.12
         version: 3.2.12
       gulp:
         specifier: ^4.0.2
         version: 4.0.2
+      lodash:
+        specifier: ^4.17.21
+        version: 4.17.21
       rollup:
         specifier: ^3.20.3
         version: 3.20.3
       rollup-plugin-esbuild:
         specifier: ^5.0.0
         version: 5.0.0(esbuild@0.17.17)(rollup@3.20.3)
+      ts-morph:
+        specifier: ^18.0.0
+        version: 18.0.0
       unplugin-vue-macros:
         specifier: ^0.11.2
         version: 0.11.2(esbuild@0.17.17)(rollup@3.20.3)(vite@4.2.1)(vue@3.2.47)
@@ -127,6 +140,10 @@ importers:
       eslint:
         specifier: ^8.18.0
         version: 8.18.0
+
+  packages/design-template: {}
+
+  packages/locale: {}
 
 packages:
 
@@ -787,6 +804,15 @@ packages:
       picomatch: 2.3.1
       rollup: 3.20.3
 
+  /@ts-morph/common@0.19.0:
+    resolution: {integrity: sha512-Unz/WHmd4pGax91rdIKWi51wnVUW11QttMEPpBiBgIewnc9UQIX7UDLxr5vRlqeByXCwhkF6VabSsI0raWcyAQ==}
+    dependencies:
+      fast-glob: 3.2.12
+      minimatch: 7.4.6
+      mkdirp: 2.1.6
+      path-browserify: 1.0.1
+    dev: false
+
   /@types/estree@1.0.0:
     resolution: {integrity: sha512-WulqXMDUTYAXCjZnk6JtIHPigp55cVtDgDrO2gHRwhyJto21+1zbVCtOYB2L1F9w4qCQ0rOGWBnBe0FNTiEJIQ==}
 
@@ -829,6 +855,10 @@ packages:
 
   /@types/json5@0.0.29:
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
+    dev: false
+
+  /@types/lodash@4.14.194:
+    resolution: {integrity: sha512-r22s9tAS7imvBt2lyHC9B8AGwWnXaYb1tY09oyLkXDs4vArpYJzw09nj8MLx5VfciBPGIb+ZwG0ssYnEPJxn/g==}
     dev: false
 
   /@types/mdast@3.0.11:
@@ -1704,6 +1734,10 @@ packages:
       readable-stream: 2.3.8
     dev: false
 
+  /code-block-writer@12.0.0:
+    resolution: {integrity: sha512-q4dMFMlXtKR3XNBHyMHt/3pwYNA69EDk00lloMOaaUMKPUXBw6lpXtbu3MMVG6/uOihGnRDOlkyqsONEUj60+w==}
+    dev: false
+
   /code-point-at@1.1.0:
     resolution: {integrity: sha512-RpAVKQA5T63xEj6/giIbUEtZwJ4UFIc3ZtvEkiaUERylqe8xb5IvqcgOurZLahv93CLKfxcw5YI+DZcUBRyLXA==}
     engines: {node: '>=0.10.0'}
@@ -1768,9 +1802,8 @@ packages:
       typedarray: 0.0.6
     dev: false
 
-  /consola@3.0.2:
-    resolution: {integrity: sha512-o/Wau2FmZKiQgyp3c3IULgN6J5yc0lwYMnoyiZdEpdGxKGBtt2ACbkulBZ6BUsHy1HlSJqoP4YOyPIJLgRJyKQ==}
-    dev: true
+  /consola@3.1.0:
+    resolution: {integrity: sha512-rrrJE6rP0qzl/Srg+C9x/AE5Kxfux7reVm1Wh0wCjuXvih6DqZgqDZe8auTD28fzJ9TF0mHlSDrPpWlujQRo1Q==}
 
   /convert-source-map@1.9.0:
     resolution: {integrity: sha512-ASFBup0Mz1uyiIjANan1jzLQami9z1PoYSZCiiYW2FczPbenXc45FZdBZLzOT+r6+iciuEModtmCti+hjaAk0A==}
@@ -3715,6 +3748,13 @@ packages:
     dependencies:
       brace-expansion: 2.0.1
 
+  /minimatch@7.4.6:
+    resolution: {integrity: sha512-sBz8G/YjVniEz6lKPNpKxXwazJe4c19fEfV2GDMX6AjFz+MX9uDWIZW8XreVhkFW3fkIdTv/gxWr/Kks5FFAVw==}
+    engines: {node: '>=10'}
+    dependencies:
+      brace-expansion: 2.0.1
+    dev: false
+
   /minimatch@9.0.0:
     resolution: {integrity: sha512-0jJj8AvgKqWN05mrwuqi8QYKx1WmYSUoKSxu5Qhs9prezTz10sxAHGNZe9J9cqIJzta8DWsleh2KaVaLl6Ru2w==}
     engines: {node: '>=16 || 14 >=14.17'}
@@ -3737,6 +3777,12 @@ packages:
     dependencies:
       for-in: 1.0.2
       is-extendable: 1.0.1
+    dev: false
+
+  /mkdirp@2.1.6:
+    resolution: {integrity: sha512-+hEnITedc8LAtIP9u3HJDFIdcLV2vXP33sqLLIzkv1Db1zO/1OxbvYf0Y1OC/S/Qo5dxHXepofhmxL02PsKe+A==}
+    engines: {node: '>=10'}
+    hasBin: true
     dev: false
 
   /mkdist@1.2.0(typescript@5.0.4):
@@ -4048,6 +4094,10 @@ packages:
   /pascalcase@0.1.1:
     resolution: {integrity: sha512-XHXfu/yOQRy9vYOtUDVMN60OEJjW013GoObG1o+xwQTpB9eYJX/BjXMsdW13ZDPruFhYYn0AG22w0xgQMwl3Nw==}
     engines: {node: '>=0.10.0'}
+    dev: false
+
+  /path-browserify@1.0.1:
+    resolution: {integrity: sha512-b7uo2UCUOYZcnF/3ID0lulOJi/bafxa1xPe7ZPsammBSpjSWQkjNxlt635YGS2MiR9GjvuXCtz2emr3jbsz98g==}
     dev: false
 
   /path-dirname@1.0.2:
@@ -4876,6 +4926,13 @@ packages:
       through2: 2.0.5
     dev: false
 
+  /ts-morph@18.0.0:
+    resolution: {integrity: sha512-Kg5u0mk19PIIe4islUI/HWRvm9bC1lHejK4S0oh1zaZ77TMZAEmQC0sHQYiu2RgCQFZKXz1fMVi/7nOOeirznA==}
+    dependencies:
+      '@ts-morph/common': 0.19.0
+      code-block-writer: 12.0.0
+    dev: false
+
   /tsconfig-paths@3.14.2:
     resolution: {integrity: sha512-o/9iXgCYc5L/JxCHPe3Hvh8Q/2xm5Z+p18PESBU6Ff33695QnCHBEjcytY2q19ua7Mbl/DavtBOLq+oG0RCL+g==}
     dependencies:
@@ -4975,7 +5032,7 @@ packages:
       '@rollup/plugin-replace': 5.0.2(rollup@3.20.3)
       '@rollup/pluginutils': 5.0.2(rollup@3.20.3)
       chalk: 5.2.0
-      consola: 3.0.2
+      consola: 3.1.0
       defu: 6.1.2
       esbuild: 0.17.17
       globby: 13.1.4
